@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 소개</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 70vw;
+            background-color: rgb(184, 145, 228);
+        }
+        h1 {
+            display: inline-block;
+
+        }
+        div:first-child {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        div:nth-child(2) {
+            height: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        img {
+            width: 200px;
+        }
+        .show {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>이재민</h1>
+    </div>
+    <div></div>
+    <img src="./WebProgramming/0904/Me.JPG" alt="MyPic"
+    class="show" >
+    <p>
+        저는 창원시 마산에서 태어나서 경성대학교 소프트웨어학과로 와
+        컴퓨터공학을 공부하고 있습니다. 저는 나중에 취업해 컴퓨터비전 분야의
+        AI 모델 설계를 하고 싶습니다.
+    </p>
+    <script>
+        const h1 = document.querySelector("h1");
+        const img = document.querySelector(".show");
+        const handleMouseOver = () => {
+            img.classList.remove("show");
+        };
+        const handleMouseLeave = () => {
+            img.classList.add("show");
+        };
+        h1.addEventListener("mouseover", handleMouseOver);
+        h1.addEventListener("mouseleave", handleMouseLeave);
+    </script>
+</body>
+</html>
