@@ -38,5 +38,8 @@ a {
 }
 a:hover {
     font-size: 22px;
-    transition: ease-in 500ms;
+    transition: ease-in 200ms;
+}
+article:nth-child(4) a {
+    padding: 30px !important;
 }
