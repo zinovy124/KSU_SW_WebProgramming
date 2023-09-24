@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색 테이블 만들기</title>
+    <style>
+        table,
+        td {
+            border: 1px solid #000;
+        }
+        tbody tr:nth-child(1) td:nth-child(3) {
+            background-color: #A52A2A;
+        }
+        tbody tr:nth-child(1) td:nth-child(6) {
+            background-color: #00BFFF;
+        }
+        tbody tr:nth-child(2) td:nth-child(3) {
+            background-color: #8A2BE2;
+        }
+        tbody tr:nth-child(2) td:nth-child(6) {
+            background-color: #FFD700;
+        }
+        tbody tr:nth-child(3) td:nth-child(3) {
+            background-color: #FF8C00;
+        }
+        tbody tr:nth-child(3) td:nth-child(6) {
+            background-color: #6B8E23;
+        }
+        td:nth-child(3n) {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h3>색 이름과 코드</h3>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>코드</td>
+                <td>색</td>
+                <td>이름</td>
+                <td>코드</td>
+                <td>색</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brown</td>
+                <td>#A52A2A</td>
+                <td></td>
+                <td>DeepSkyBlue</td>
+                <td>#00BFFF</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Blueviolet</td>
+                <td>#8A2BE2</td>
+                <td></td>
+                <td>Gold</td>
+                <td>#FFD700</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DarkOrange</td>
+                <td>#FF8C00</td>
+                <td></td>
+                <td>OliveDrab</td>
+                <td>#6B8E23</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

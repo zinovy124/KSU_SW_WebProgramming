@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        @keyframes rotation {
+            from {
+                transform: rotate(-90deg);
+            }
+            to {
+                transform: rotate(90deg);
+            }
+        }
+        img {
+            animation: rotation 1s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <h3>어지러워요</h3>
+    <hr>
+    <img src="spongebob.jpeg" alt="spongebob">
+</body>
+</html>

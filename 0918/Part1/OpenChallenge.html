@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터 기술 소개</title>
+    <style>
+        body {
+            width: 85vw;
+            margin: 0 auto;
+            background-color: #eeeeee;
+            padding: 40px;
+        }
+        .contents {
+            padding: 50px;
+        }
+        .title {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+            height: 20%;
+        }
+        img {
+            width: 20%;
+        }
+        h2 {
+            display: inline-block;
+            font-size: 100px;
+            text-align: end;
+        }
+        table {
+            border: 1px solid #000;
+            margin: 10px;
+        }
+        thead > tr {
+            background-color: #7c7c7c;
+            color: #fff;
+        }
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        tbody > tr > td:first-child {
+            background-color: #acacac;
+        }
+        h3 {
+            font-size: 40px;
+            margin: 0;
+            padding: 10px;
+        }
+        .contents ol {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin: 0 auto;
+            background-color: #707070;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .contents ol > li {
+            margin: 10px;
+            display: inline-block;
+            font-size: 28px;
+        }
+        .contents a {
+            color: papayawhip;
+            text-decoration: none;
+        }
+        .contents a:visited {
+            color: #fff;
+        }
+        #first {
+            padding: 0;
+        }
+        #second {
+            margin: 0 0 0 10px;
+        }
+        #second ~ ol > li {
+            font-size: 18px;
+        }
+        p {
+            font-size: 18px;
+            display: inline-block;
+        }
+        .block {
+            display: inline-block;
+            width: 45%;
+            padding: 30px;
+            border-radius: 50px;
+            background: #e0e0e0;
+            box-shadow:  20px 20px 60px #bebebe,
+                         -20px -20px 60px #ffffff;
+            line-height: 1.5em;
+        }
+        .floor1 > .block {
+            padding: 40px;
+        }
+        .floor1,
+        .floor2,
+        .floor3 {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 100px 0;
+        }
+        .floor2 {
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/240px-Node.js_logo.svg.png" alt="node.js_logo">
+        <h2>Node.js</h2>
+    </div>
+    <div class="contents">
+        <h3>Contents</h3>
+        <ol>
+            <li>
+                <a href="#first">개요</a>
+            </li>
+            <li>
+                <a href="#second">역사</a>
+            </li>
+            <li>
+                <a href="#third">현재 서비스 중인 버젼</a>
+            </li>
+        </ol>
+    </div>
+    <div class="floor1">
+        <div class="block">
+            <h3 id="first">개요</h3>
+            <p>
+                Node.js는 확장성 있는 네트워크 애플리케이션(특히 서버 사이드) 개발에
+                사용되는 소프트웨어 플랫폼이다. 작성 언어로 <a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" target="_blank">자바스크립트</a>를 활용하며
+                논블로킹(Non-blocking) I/O와 단일 스레드 이벤트 루프를 통한 높은
+                처리 성능을 가지고 있다. 내장 HTTP 서버 라이브러리를 포함하고 있어
+                웹 서버에서 아파치 등의 별도의 소프트웨어 없이 동작하는 것이 가능하며
+                이를 통해 웹 서버의 동작에 있어 더 많은 통제를 가능케 한다.
+            </p>
+        </div>
+    </div>
+    <div class="floor2">
+        <div class="block">
+            <h3 id="second">역사</h3>
+            <ol>
+                <li>
+                    최초 버전은 2009년 리눅스 기반으로 출시되었고,
+                    첫 JSConf EU 콘퍼런스에서 라이언 달의 발표 직후
+                    국제적인 관심을 끌기 시작했다. 패키지 매니저인 <a href="https://ko.wikipedia.org/wiki/Npm_(%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)" target="_blank">npm</a>은
+                    2011년에 처음 소개되었다.
+                </li>
+                <li>
+                    2011년 6월 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8" target="_blank">마이크로소프트</a>는 Joyent와 파트너십을 맺고
+                    같은 해 7월 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8_%EC%9C%88%EB%8F%84%EC%9A%B0" target="_blank">윈도우</a>용 최초 버전을 출시했다.
+                </li>
+                <li>
+                    2014년 12월, Fedor Indutny는 Node.js의
+                    포크인 io.js를 시작했다.
+                </li>
+                <li>
+                    2015년 9월, Node.js v0.12와 io.js v3.3은 병합되어
+                    Node v4.0으로 합쳐졌다.
+                </li>
+                <li>
+                    2019년 4월, Node.js v12부터 <a href="https://ko.wikipedia.org/wiki/ECMA%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" target="_blank">ECMA스크립트</a>의 공식 모듈 시스템
+                    사용을 실험적으로 지원하기 시작했다.
+                    (그 이전까지는 서드파티인 <a href="https://ko.wikipedia.org/wiki/CommonJS" target="_blank">CommonJS</a> 모듈만을 사용해오고 있었다.)
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="floor3">
+        <div class="block">
+            <h3 id="third">현재 지원 중인 버젼</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <td>릴리스</td>
+                        <td>상태</td>
+                        <td>코드명</td>
+                        <td>출시일</td>
+                        <td>유지보수 종료일</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>14.x</td>
+                        <td>유지보수 LTS</td>
+                        <td>Fermium</td>
+                        <td>2020-04-21</td>
+                        <td>2023-04-30</td>
+                    </tr>
+                    <tr>
+                        <td>16.x</td>
+                        <td>유지보수 LTS</td>
+                        <td>Gallium</td>
+                        <td>2021-04-20</td>
+                        <td>2023-09-11</td>
+                    </tr>
+                    <tr>
+                        <td>18.x</td>
+                        <td>지원중인 LTS</td>
+                        <td>Hydrogen</td>
+                        <td>2022-04-19</td>
+                        <td>2025-04-30</td>
+                    </tr>
+                    <tr>
+                        <td>19.x</td>
+                        <td>현재</td>
+                        <td></td>
+                        <td>2022-10-18</td>
+                        <td>2023-06-01</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="toSurvey">
+        <a href="OpenChallengeMaterial.html" target="_blank">to Survey</a>
+    </div>
+</body>
+</html>

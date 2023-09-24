@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #wrap {
+            width: 70%;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        h3 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            height: 1.5em;
+            border: none;
+            border-radius: 39px;
+            background: #e0e0e0;
+            box-shadow:  7px 7px 14px #a4a4a4,
+                        -7px -7px 14px #ffffff;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-radius: 39px;
+            background: linear-gradient(145deg, #cacaca, #f0f0f0);
+            box-shadow:  7px 7px 14px #a4a4a4,
+                        -7px -7px 14px #ffffff;
+        }
+        label,
+        input {
+            display: block;
+            padding: 3px 0 0 0;
+            margin: 2px 0 0 0;
+        }
+        div > label,
+        div > input {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3>설문지</h3>
+        <p>소프트웨어 기술에 대한 설문을 진행합니다</p>
+        <hr>
+        <form action="" method="post">
+            <label for="userId">ID</label>
+            <input type="text" name="userId" id="userId">
+            <label for="userPassWd">Password</label>
+            <input type="password" name="userPassWd" id="userPassWd">
+            <label for="userNum">학번</label>
+            <input type="text" name="userNum" id="userNum">
+            <div class="radio">
+                <label for="male">Male</label>
+                <input type="radio" name="userGen" id="male" value="male">
+                <label for="female">Female</label>
+                <input type="radio" name="userGen" id="female" value="female">
+            </div>
+            <label for="career">관심 분야</label>
+            <select name="career" id="career">
+                <option value="webFront">Web Frontend</option>
+                <option value="webBack">Web Backend</option>
+                <option value="ai">AI</option>
+                <option value="game">Game</option>
+                <option value="data">data</option>
+            </select>
+            <div class="check">
+                <label for="career2">개발</label>
+                <input type="checkbox" name="career2" id="career2" value="dev">
+                <label for="career3">기획</label>
+                <input type="checkbox" name="career2" id="career3" value="design">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
