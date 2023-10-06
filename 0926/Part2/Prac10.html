@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book 객체 배열 만들기</title>
+</head>
+<body>
+    <h3>book 객체 배열 만들기</h3>
+    <hr>
+    <script>
+        function Book(title, author, price) {
+            this.title = title;
+            this.author = author;
+            this.price = Number(price);  // 가격을 숫자로 변환합니다.
+        }
+        
+        let bookArray = [];
+        for (let i = 0; i < 5; i++) {
+            let inp = prompt("콤마(,)로 분리하면서 책제목, 저자, 가격 순으로 입력");
+            let inpArr = inp.split(",");
+            bookArray.push(new Book(inpArr[0], inpArr[1], inpArr[2]));  // 'new' 키워드를 사용하여 객체를 생성합니다.
+        }
+        
+        let mostExpensiveBook = bookArray.reduce((max, cur) => {
+            return cur.price > max.price ? cur : max;
+        }, {price: 0});  // 초기값을 {price: 0}으로 설정합니다.
+        
+        document.write("<p>가장 가격이 비싼 책은 " + mostExpensiveBook.title + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book 객체 만들기</title>
+</head>
+<body>
+    <h3>book 객체 만들기</h3>
+    <hr>
+    <script>
+        function Book(title, author, price) {
+            this.title = title;
+            this.author = author;
+            this.price = price;
+        }
+        
+        const book3 = new Book("HTML5", "황기태", 20000);
+        
+        const p3 = document.createElement("p");
+        p3.innerText = "book : " + book3.title + ", " + book3.author + ", " + book3.price;
+        document.querySelector("body").appendChild(p3);
+    </script>
+</body>
+</html>
