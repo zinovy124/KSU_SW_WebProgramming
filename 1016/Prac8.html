@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+</head>
+<body>
+    <h3>클릭하면 2, 3, 4배 늘어남</h3>
+    <hr>
+    <img src="https://i.ytimg.com/vi/3jPFr94OxXY/maxresdefault.jpg" alt="bocchi" style="transform: scaleX(1);" width="800px">
+    <script>
+        document.querySelector("img").addEventListener("click", (e) => {
+            let width = e.target.style.transform;
+            const match = width.match(/(-?\d+)/);
+            let now = match ? parseInt(match[0], 10) : null;
+            console.log(now);
+            e.target.style.transform = `scaleX(${++now})`;
+            console.log(now);
+        });
+    </script>
+</body>
+</html>

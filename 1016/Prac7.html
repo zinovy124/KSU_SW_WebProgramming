@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+</head>
+<body>
+    <h3>클릭하면 90도 회전</h3>
+    <hr>
+    <img src="https://i.ytimg.com/vi/3jPFr94OxXY/maxresdefault.jpg" alt="bocchi" style="transform: rotate(0deg);" width="800px">
+    <script>
+        document.querySelector("img").addEventListener("click", (e) => {
+            const deg = e.target.style.transform;
+            const match = deg.match(/(-?\d+)/);
+            let now = match ? parseInt(match[0], 10) : null;
+            now += 90;
+            e.target.style.transform = `rotate(${now}deg)`;
+        });
+    </script>
+</body>
+</html>

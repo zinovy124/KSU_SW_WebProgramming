@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        div,
+        img {
+            position: absolute;
+        }
+        img {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h3>z-index style property</h3>
+    <hr>
+    <div>
+        <img src="https://opengameart.org/sites/default/files/styles/medium/public/king_of_hearts2.png" alt="card1">
+        <img src="https://opengameart.org/sites/default/files/styles/medium/public/queen_of_diamonds2.png" alt="card2">
+        <img src="https://opengameart.org/sites/default/files/styles/medium/public/7_of_clubs.png" alt="card3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/1638px-Playing_card_heart_A.svg.png" alt="card4">
+    </div>
+    <script>
+        let z;
+        const card = document.querySelectorAll("img");
+        Array.prototype.map.call(card, (cur, idx) => {
+            cur.style.zIndex = idx;
+        });
+        for (let i = 0; i < 4; i++) {
+            card[i].addEventListener("click", (e) => {
+                z = parseInt(e.target.style.zIndex);
+                z -= 4;
+                e.target.style.zIndex = `${z}`;
+            });
+        }
+    </script>
+</body>
+</html>

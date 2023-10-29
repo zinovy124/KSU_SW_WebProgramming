@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    <h3>innerHTML</h3>
+    <hr>
+    <p>
+        클릭 후 입력
+    </p>
+    <script>
+        const p = document.querySelector("p");
+        p.addEventListener("click", () => {
+            p.innerHTML = prompt("텍스트 입력");
+        });
+    </script>
+</body>
+</html>
