@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체의 target</title>
+</head>
+<body>
+    <h3>아이템을 클릭하면 1.3배 크기로</h3>
+    <hr>
+    <p>지금 하고 싶은 것들</p>
+    <ul>
+        <li>수면</li>
+        <li>숙면 청하기</li>
+        <li>잠에 들기</li>
+        <li>절망하기</li>
+    </ul>
+    <script>
+        for (let li of document.querySelectorAll("li")) {
+            li.addEventListener("click", (e) => {
+                document.querySelectorAll("li").forEach((cur) => {
+                    cur.style.fontSize = "1.0em";
+                });
+                e.target.style.fontSize = "1.3em";
+            });
+        }
+    </script>
+</body>
+</html>

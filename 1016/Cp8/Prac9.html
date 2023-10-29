@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라면을 끓이는 순서</title>
+</head>
+<body>
+    <h3>라면을 끓이는 순서</h3>
+    <hr>
+    <ol type="A" style="background-color: yellowgreen;">
+        <li>물을 끓인다.</li>
+    </ol>
+    <script>
+        const ol = document.querySelector("ol");
+        ol.addEventListener("click", (e) => {
+            let inp = prompt("라면 끓이는 순서 입력");
+            const elem = document.createElement("li");
+            elem.innerText = inp;
+            ol.appendChild(elem);
+        });
+    </script>
+</body>
+</html>

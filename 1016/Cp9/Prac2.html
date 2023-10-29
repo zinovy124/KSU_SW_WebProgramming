@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼과 이미지 출력</title>
+</head>
+<body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다</h3>
+    <hr>
+    <label for="bocchi">고토 히토리</label>
+    <input type="radio" name="image" id="bocchi">
+    <label for="nijika">이지치 니지카</label>
+    <input type="radio" name="image" id="nijika">
+    <label for="ryo">야마다 료</label>
+    <input type="radio" name="image" id="ryo">
+    <label for="kita">키타 이쿠요</label>
+    <input type="radio" name="image" id="kita">
+    <script>
+        const inputs = document.getElementsByName("image");
+        const imgUrl = {
+            hitori : "https://data.onnada.com/character/202210/3718766049_3f1397a1_hitori.jpg",
+            nijika : "https://data.onnada.com/character/202211/3718766049_efd01d81_ijika4.jpg",
+            ryo : "https://data.onnada.com/character/202210/3718766049_d364cbaa_ryo3.jpg",
+            kita : "https://data.onnada.com/character/202211/3718766049_b2ac309d_kita2.jpg",
+        }
+        const urlArr = Object.values(imgUrl);
+        Array.prototype.map.call(inputs, (cur, idx) => {
+            const img = document.createElement("img");
+            img.style.display = "block";
+            img.src = urlArr[idx];
+            // 이벤트리스너를 달아야 하는 이유는, 이벤트를 추적하지 않으면 radiobox의 checked property의 검사 시점을
+            // 정할 수 없다. while로 계속 이게 달리는지 안 달리는지 확인하고 있을 노릇도 아니고.
+            cur.addEventListener("click", () => {
+                if (document.querySelector("img") != null) {
+                    document.querySelector("img").remove();
+                }
+                document.body.appendChild(img);
+            });
+        });
+    </script>
+</body>
+</html>

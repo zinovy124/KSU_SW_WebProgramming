@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmousemove</title>
+    <style>
+        img {
+            position: absolute;
+            /* transition: top 0.2s, left 0.2s; */
+        }
+    </style>
+</head>
+<body>
+    <h3>이미지 커서 만들기</h3>
+    <hr>
+    <p>
+        마우스를 움직이면 이미지로 만든 커서가 마우스를 따라 다닙니다.
+    </p>
+    <img src="https://m.popmon.co.kr/web/upload/NNEditor/20230527/mobile/5caa06f0868cd07c1f1d32bdc9cf83db_1685160640.jpg" alt="bocchi" width="30px" height="30px">
+    <script>
+        const img = document.querySelector("img");
+        let x, y;
+        document.addEventListener("mousemove", (e) => {
+            img.style.left = e.clientX + "px";
+            img.style.top = e.clientY + "px";
+        });
+    </script>
+</body>
+</html>

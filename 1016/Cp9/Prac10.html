@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+    <style>
+        button {
+            width: 80px;
+        }
+        input {
+            width: 100%;
+        }
+        .container {
+            width: 350px;
+        }
+        #wrap {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <div id="wrap">
+        <div class="container">
+            <input type="text" value="0" disabled>
+            <table>
+                <tr>
+                    <td><button>BACK</button></td>
+                    <td><button>CE</button></td>
+                    <td><button>C</button></td>
+                    <td><button>=</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>/</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>*</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>+</button></td>
+                    <td><button>NONE</button></td>
+                    <td><button>NONE</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll("button");
+        const resDisplay = document.querySelector("input");
+        buttons.forEach((cur, idx) => {
+            if (idx == 19 || idx == 18) {
+
+            } else {
+                cur.addEventListener("click", (e) => {
+                    console.dir(e.target.innerText);
+                    if (isNaN(parseInt(e.target.innerText))) {
+                        if (e.target.innerText == "BACK") {
+                            resDisplay.value = resDisplay.value.substring(0, resDisplay.value.length - 1);
+                        } else if (e.target.innerText == "CE" || e.target.innerText == "C") {
+                            resDisplay.value = "0";
+                        } else if (e.target.innerText == "+") {
+                            resDisplay.value += "+";
+                        } else if (e.target.innerText == "-") {
+                            resDisplay.value += "-";
+                        } else if (e.target.innerText == "*") {
+                            resDisplay.value += "*";
+                        } else if (e.target.innerText == "/") {
+                            resDisplay.value += "/";
+                        } else if (e.target.innerText == "=") {
+                            resDisplay.value = eval(resDisplay.value);
+                        }
+                    } else {
+                        if (resDisplay.value == "0") {
+                            resDisplay.value = e.target.innerText;
+                        } else {
+                            resDisplay.value += e.target.innerText;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

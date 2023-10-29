@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenChallenge</title>
+    <style>
+        .hide {
+            display: none;
+        }
+        div {
+            width: 500px;
+            height: 300px;
+        }
+        span {
+            display: inline-block;
+            height: 100%;
+            width: calc(500px/3);
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>겜블링 게임</h3>
+    <p>각 숫자를 클릭하면 0에서 2 사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+    <hr>
+    <div>
+        <span>0</span><span>0</span><span>0</span>
+    </div>
+    <p class="hide mes">Success(Click here to do again)</p>
+    <p class="hide mes">Fail(Click here to do again)</p>
+    <script>
+    const spans = document.querySelectorAll("span");
+    const hides = document.querySelectorAll("p.mes");
+
+    spans.forEach((cur, idx) => {
+        cur.addEventListener("click", (e) => {
+            const randNum = Math.ceil(Math.random() * 2);
+            e.target.innerText = randNum;
+            e.target.clicked = true;
+
+            if (spans[0].clicked && spans[1].clicked && spans[2].clicked) {
+                if (spans[0].innerText == spans[1].innerText && spans[1].innerText == spans[2].innerText) {
+                    hides[0].classList.remove("hide");
+                } else {
+                    hides[1].classList.remove("hide");
+                }
+            }
+        });
+    });
+
+    hides.forEach((cur, idx) => {
+        cur.addEventListener("click", (e) => {
+            spans.forEach((cur) => {
+                cur.innerText = "0";
+                cur.clicked = false;
+            });
+            cur.classList.add("hide");
+        });
+    });
+    </script>
+</body>
+</html>

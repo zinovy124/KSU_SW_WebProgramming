@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmouseover와 onmouseout</title>
+</head>
+<body>
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+    <hr>
+    <p>지금 하고 싶은 것들</p>
+    <ul>
+        <li>수면</li>
+        <li>숙면 청하기</li>
+        <li>편히 쉬기</li>
+        <li>스트레스 해소하기</li>
+    </ul>
+    <div style="display: none; position: absolute; background-color: darkseagreen;">
+        수면은 인간의 삶에 있어 1/3을 차지할 정도로 많은 시간을 투자합니다.
+    </div>
+    <div style="display: none; position: absolute; background-color: darkseagreen;">
+        수면이 별 거 아닌 거 같지만 이 수면이 진행되는 동안 인간의 몸에서
+        하루를 시작하기 위한 신진대사를 수행합니다.
+    </div>
+    <div style="display: none; position: absolute; background-color: darkseagreen;">
+        이를테면 하루 종일 쌓인 뇌의 활동으로 생긴 부산물을 뇌척수액으로
+        빼내는 작업, 씻기, 청소로 비유할 수 있는 이런 작업 등을 수행합니다.
+    </div>
+    <div style="display: none; position: absolute; background-color: darkseagreen;">
+        적당한 스트레스는 인간에게 긍정적인 영향을 주지만 과도한 스트레스는
+        각종 질병의 원인이 되며 치명적인 병을 야기하기도 합니다.
+    </div>
+    <script>
+        const lis = document.querySelectorAll("li");
+        const divs = document.querySelectorAll("div");
+        Array.prototype.map.call(lis, (cur, idx) => {
+            cur.addEventListener("mouseover", (e) => {
+                divs[idx].style.left = e.clientX + "px";
+                divs[idx].style.top = e.clientY + "px";
+                divs[idx].style.display = "inline-block";
+                divs[idx].style.width = "250px";
+                divs[idx].style.height = "110px";
+            });
+            cur.addEventListener("mouseout", (e) => {
+                divs[idx].style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>
